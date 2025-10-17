@@ -4,6 +4,7 @@ import { Hero } from '@/components/landing/hero';
 import { Services } from '@/components/landing/services';
 import { Testimonials } from '@/components/landing/testimonials';
 import { ServiceRequestForm } from '@/components/landing/service-request-form';
+import { HowItWorks } from '@/components/landing/how-it-works';
 import { AnimatedSection } from '@/components/shared/animated-section';
 
 export default function Home() {
@@ -15,6 +16,10 @@ export default function Home() {
         
         <AnimatedSection>
           <Services />
+        </AnimatedSection>
+
+        <AnimatedSection>
+          <HowItWorks />
         </AnimatedSection>
         
         <AnimatedSection>
