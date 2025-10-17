@@ -31,6 +31,12 @@
       "imageHint": "company logo"
     },
     {
+      "id": "logo-aurora",
+      "description": "Logo for a tech company",
+      "imageUrl": "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjA4MTc3OTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract logo"
+    },
+    {
       "id": "hero-service-provider",
       "description": "A confident female contractor with a hard hat and tools",
       "imageUrl": "https://images.unsplash.com/photo-1574393436330-230a1098679b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb250cmFjdG9yfGVufDB8fHx8MTcxODg5NTg5N3ww&ixlib=rb-4.0.3&q=80&w=1080",

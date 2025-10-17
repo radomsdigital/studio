@@ -32,6 +32,13 @@ const testimonials: Testimonial[] = [
     authorName: 'Michael Brown',
     authorTitle: 'Property Manager',
   },
+   {
+    logoId: 'logo-aurora',
+    companyName: 'Aurora Digital',
+    quote: 'Posting a task was straightforward, and I received competitive bids within hours. The quality of work from the chosen provider was excellent.',
+    authorName: 'Sarah Johnson',
+    authorTitle: 'Small Business Owner',
+  },
 ];
 
 export function Testimonials() {
@@ -47,7 +54,7 @@ export function Testimonials() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => {
             const logo = PlaceHolderImages.find(img => img.id === testimonial.logoId);
             return (
