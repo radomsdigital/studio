@@ -13,6 +13,16 @@ const taskPostSchema = z.object({
   taskDetails: z.string().min(10, { message: 'Details must be at least 10 characters.' }),
 });
 
+const providerSignupSchema = z.object({
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Please enter a valid email address.' }),
+  service: z.string().min(3, { message: 'Please select a service.' }),
+  experience: z.string().refine(val => !isNaN(parseInt(val, 10)) && parseInt(val, 10) >= 0, {
+    message: 'Please enter a valid number of years.',
+  }),
+});
+
+
 export type FormState = {
   message: string;
   isSuccess?: boolean;
@@ -68,4 +78,32 @@ export async function handleServiceRequest(
       message: 'An unexpected error occurred. Please try again later or contact support.',
     };
   }
+}
+
+export async function handleProviderSignup(
+  prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const validatedFields = providerSignupSchema.safeParse({
+    name: formData.get('name'),
+    email: formData.get('email'),
+    service: formData.get('service'),
+    experience: formData.get('experience'),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      message: 'Please correct the errors below.',
+      errors: validatedFields.error.issues,
+    };
+  }
+
+  // Here you would typically save the provider's data to your database.
+  // For now, we'll just simulate a successful submission.
+  console.log('Provider Signup Data:', validatedFields.data);
+
+  return {
+    isSuccess: true,
+    message: "Thank you for signing up! We've received your application and will be in touch shortly after we review your information.",
+  };
 }
