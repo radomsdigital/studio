@@ -1,6 +1,7 @@
 'use client';
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -49,7 +50,7 @@ function SubmitButton() {
 export function ProviderSignupForm() {
   const { toast } = useToast();
   const initialState: FormState = { message: '' };
-  const [state, formAction] = useFormState(handleProviderSignup, initialState);
+  const [state, formAction] = useActionState(handleProviderSignup, initialState);
 
   const form = useForm<FormData>({
     resolver: zodResolver(providerSignupSchema),
