@@ -1,9 +1,5 @@
 
-import type { LucideIcon } from 'lucide-react';
-import { Home, Wrench, Palette, BrainCircuit } from 'lucide-react';
-
 export interface Service {
-  icon: LucideIcon;
   name: string;
   description: string;
   features: string[];
