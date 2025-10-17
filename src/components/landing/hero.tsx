@@ -21,14 +21,19 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative z-10 p-4 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold !leading-tight tracking-tight mb-6 text-shadow">
-          Book Local Services, On-Demand
+          Post a Task, Get It Done
         </h1>
         <p className="text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto mb-10">
-          Find trusted professionals for any service you need, right in your neighborhood.
+          Describe your job and let our network of skilled professionals bid to win your task.
         </p>
-        <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-          <Link href="#booking">Book a Service</Link>
-        </Button>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Link href="#booking">Post a Task</Link>
+          </Button>
+          <Button size="lg" variant="secondary" asChild>
+            <Link href="#services">Explore Services</Link>
+          </Button>
+        </div>
       </div>
     </section>
   );

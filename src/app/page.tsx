@@ -26,10 +26,10 @@ export default function Home() {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Book a Service
+                  Post Your Task
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Fill out the form below to book a service with one of our trusted providers.
+                  Describe the task you need done, and get bids from qualified providers.
                 </p>
               </div>
               <ServiceRequestForm />

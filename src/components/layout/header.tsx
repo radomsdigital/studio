@@ -35,7 +35,7 @@ export function Header() {
             <Link href="/provider-signup">Become a Provider</Link>
           </Button>
           <Button asChild>
-            <Link href="#booking">Book a Service</Link>
+            <Link href="#booking">Post a Task</Link>
           </Button>
         </nav>
       </div>

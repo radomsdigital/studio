@@ -19,8 +19,8 @@ import { CheckCircle, Info, Loader2, ServerCrash } from 'lucide-react';
 const serviceRequestSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
-  service: z.string().min(3, { message: 'Please specify the service you need.' }),
-  message: z.string().min(10, { message: 'Message must be at least 10 characters.' }),
+  taskTitle: z.string().min(3, { message: 'Please specify the title of your task.' }),
+  taskDetails: z.string().min(10, { message: 'Details must be at least 10 characters.' }),
 });
 
 type FormData = z.infer<typeof serviceRequestSchema>;
@@ -32,10 +32,10 @@ function SubmitButton() {
       {pending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Sending Request...
+          Posting Task...
         </>
       ) : (
-        'Request Service'
+        'Post Your Task'
       )}
     </Button>
   );
@@ -70,7 +70,7 @@ export function ServiceRequestForm() {
     return (
       <Alert variant={state.isHumanRoute ? "default" : "default"} className="max-w-4xl mx-auto bg-card">
          {state.isHumanRoute ? <Info className="h-4 w-4" /> : <CheckCircle className="h-4 w-4 text-accent" /> }
-        <AlertTitle className='font-bold text-lg'>{state.isHumanRoute ? "Request Sent to Our Team" : "Request Received!"}</AlertTitle>
+        <AlertTitle className='font-bold text-lg'>{state.isHumanRoute ? "Your Task is Complex!" : "Task Posted!"}</AlertTitle>
         <AlertDescription>
           <p className="mb-4">{state.message}</p>
         </AlertDescription>
@@ -104,19 +104,19 @@ export function ServiceRequestForm() {
               {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
             </div>
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="service">Service Needed</Label>
-              <Input id="service" {...register('service')} aria-invalid={!!errors.service} placeholder="e.g., House Cleaning, Plumbing, Web Design" />
-              {errors.service && <p className="text-sm text-destructive">{errors.service.message}</p>}
+              <Label htmlFor="taskTitle">Task Title</Label>
+              <Input id="taskTitle" {...register('taskTitle')} aria-invalid={!!errors.taskTitle} placeholder="e.g., Need a logo for my new website" />
+              {errors.taskTitle && <p className="text-sm text-destructive">{errors.taskTitle.message}</p>}
             </div>
             <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="message">Details</Label>
+              <Label htmlFor="taskDetails">Task Details</Label>
               <Textarea
-                id="message"
-                {...register('message')}
-                aria-invalid={!!errors.message}
-                placeholder="Please provide details about your needs, preferred dates, and location."
+                id="taskDetails"
+                {...register('taskDetails')}
+                aria-invalid={!!errors.taskDetails}
+                placeholder="Describe your task in detail. Include budget, timeline, and any specific requirements."
               />
-               {errors.message && <p className="text-sm text-destructive">{errors.message.message}</p>}
+               {errors.taskDetails && <p className="text-sm text-destructive">{errors.taskDetails.message}</p>}
             </div>
           </div>
           
