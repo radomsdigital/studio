@@ -17,7 +17,7 @@ import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
 import { CheckCircle, Loader2, ServerCrash } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { services } from '@/lib/definitions';
-import { FormControl, FormField, FormItem } from '../ui/form';
+import { Form, FormControl, FormField, FormItem, FormMessage } from '../ui/form';
 
 
 const providerSignupSchema = z.object({
@@ -96,55 +96,57 @@ export function ProviderSignupForm() {
   return (
     <Card className="max-w-4xl mx-auto">
       <CardContent className="p-6 md:p-8">
-        <form action={formAction} className="space-y-8">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-2">
-              <Label htmlFor="name">Full Name</Label>
-              <Input id="name" {...form.register('name')} aria-invalid={!!errors.name} />
-              {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
-            </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email Address</Label>
-              <Input id="email" type="email" {...form.register('email')} aria-invalid={!!errors.email} />
-              {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
-            </div>
+        <Form {...form}>
+          <form action={formAction} className="space-y-8">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="name">Full Name</Label>
+                <Input id="name" {...form.register('name')} aria-invalid={!!errors.name} />
+                {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="email">Email Address</Label>
+                <Input id="email" type="email" {...form.register('email')} aria-invalid={!!errors.email} />
+                {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
+              </div>
 
-            <div className="space-y-2">
-                <Label>Primary Service</Label>
-                <FormField
-                  control={form.control}
-                  name="service"
-                  render={({ field }) => (
-                    <FormItem>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a service category" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          {services.map(service => (
-                            <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                      {errors.service && <p className="text-sm text-destructive">{errors.service.message}</p>}
-                    </FormItem>
-                  )}
-                />
+              <div className="space-y-2">
+                  <Label>Primary Service</Label>
+                  <FormField
+                    control={form.control}
+                    name="service"
+                    render={({ field }) => (
+                      <FormItem>
+                        <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <FormControl>
+                            <SelectTrigger>
+                              <SelectValue placeholder="Select a service category" />
+                            </SelectTrigger>
+                          </FormControl>
+                          <SelectContent>
+                            {services.map(service => (
+                              <SelectItem key={service.name} value={service.name}>{service.name}</SelectItem>
+                            ))}
+                          </SelectContent>
+                        </Select>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="experience">Years of Experience</Label>
+                <Input id="experience" type="number" {...form.register('experience')} aria-invalid={!!errors.experience} />
+                {errors.experience && <p className="text-sm text-destructive">{errors.experience.message}</p>}
+              </div>
             </div>
             
-            <div className="space-y-2">
-              <Label htmlFor="experience">Years of Experience</Label>
-              <Input id="experience" type="number" {...form.register('experience')} aria-invalid={!!errors.experience} />
-              {errors.experience && <p className="text-sm text-destructive">{errors.experience.message}</p>}
+            <div className="flex justify-end pt-6 border-t">
+              <SubmitButton />
             </div>
-          </div>
-          
-          <div className="flex justify-end pt-6 border-t">
-            <SubmitButton />
-          </div>
-        </form>
+          </form>
+        </Form>
       </CardContent>
     </Card>
   );
