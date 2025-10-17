@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero-background",
+      "description": "Abstract image of cloud infrastructure",
+      "imageUrl": "https://images.unsplash.com/photo-1649134627026-317e59dd711b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbG91ZCUyMGluZnJhc3RydWN0dXJlfGVufDB8fHx8MTc2MDczOTczNnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cloud infrastructure"
+    },
+    {
+      "id": "logo-quantum",
+      "description": "Logo for QuantumLeap Inc.",
+      "imageUrl": "https://images.unsplash.com/photo-1549924231-f129b911e442?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjA3MzA4NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "logo-stellar",
+      "description": "Logo for Stellar Solutions",
+      "imageUrl": "https://images.unsplash.com/photo-1619551734325-81aaf323686c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjA3MzA4NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "logo-nexus",
+      "description": "Logo for Nexus Corp",
+      "imageUrl": "https://images.unsplash.com/photo-1496200186974-4293800e2c20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjA3MzA4NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "logo-zenith",
+      "description": "Logo for Zenith Dynamics",
+      "imageUrl": "https://images.unsplash.com/photo-1620288627223-53302f4e8c74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjb21wYW55JTIwbG9nb3xlbnwwfHx8fDE3NjA3MzA4NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "company logo"
+    }
+  ]
 }

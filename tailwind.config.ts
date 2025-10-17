@@ -1,4 +1,5 @@
 import type {Config} from 'tailwindcss';
+const { fontFamily } = require("tailwindcss/defaultTheme")
 
 export default {
   darkMode: ['class'],
@@ -8,10 +9,17 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Inter', ...fontFamily.sans],
+        headline: ['Inter', ...fontFamily.sans],
         code: ['monospace'],
       },
       colors: {
@@ -93,7 +101,25 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      textShadow: {
+        DEFAULT: '0 2px 4px rgba(0, 0, 0, 0.5)',
+        md: '0 4px 8px rgba(0, 0, 0, 0.5)',
+        lg: '0 8px 16px rgba(0, 0, 0, 0.5)',
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    function ({ addUtilities, theme, e }: any) {
+      const newUtilities = Object.entries(theme('textShadow')).reduce(
+        (acc, [key, value]) => {
+          const className =
+            key === 'DEFAULT' ? '.text-shadow' : `.text-shadow-${e(key)}`;
+          return { ...acc, [className]: { textShadow: value as string } };
+        },
+        {}
+      );
+      addUtilities(newUtilities);
+    },
+  ],
 } satisfies Config;
