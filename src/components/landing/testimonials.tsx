@@ -7,28 +7,28 @@ const testimonials: Testimonial[] = [
   {
     logoId: 'logo-quantum',
     companyName: 'QuantumLeap Inc.',
-    quote: 'Apex Cloud has been a game-changer for our infrastructure. Their scalability and reliability are unmatched, allowing us to focus on innovation.',
+    quote: 'Leywok has been a game-changer for our infrastructure. Their scalability and reliability are unmatched, allowing us to focus on innovation.',
     authorName: 'Jane Doe',
     authorTitle: 'CTO, QuantumLeap Inc.',
   },
   {
     logoId: 'logo-stellar',
     companyName: 'Stellar Solutions',
-    quote: 'The migration to Apex was seamless. Their support team is top-notch, and we’ve seen a 30% reduction in our operational costs.',
+    quote: 'The migration to Leywok was seamless. Their support team is top-notch, and we’ve seen a 30% reduction in our operational costs.',
     authorName: 'John Smith',
     authorTitle: 'Head of Engineering, Stellar Solutions',
   },
   {
     logoId: 'logo-nexus',
     companyName: 'Nexus Corp',
-    quote: 'Apex AI Services enabled us to deploy our machine learning models at scale with incredible speed. It’s a powerful platform for any data-driven company.',
+    quote: 'Leywok AI Services enabled us to deploy our machine learning models at scale with incredible speed. It’s a powerful platform for any data-driven company.',
     authorName: 'Emily White',
     authorTitle: 'Lead Data Scientist, Nexus Corp',
   },
     {
     logoId: 'logo-zenith',
     companyName: 'Zenith Dynamics',
-    quote: 'Security and compliance are critical for us. Apex Cloud provides the robust security features we need to protect our enterprise data confidently.',
+    quote: 'Security and compliance are critical for us. Leywok provides the robust security features we need to protect our enterprise data confidently.',
     authorName: 'Michael Brown',
     authorTitle: 'CISO, Zenith Dynamics',
   },
@@ -43,7 +43,7 @@ export function Testimonials() {
             Trusted by Leading Enterprises
           </h2>
           <p className="text-lg text-muted-foreground mt-4">
-            See how businesses like yours are transforming with Apex Cloud.
+            See how businesses like yours are transforming with Leywok.
           </p>
         </div>
 

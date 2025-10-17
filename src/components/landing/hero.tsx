@@ -21,7 +21,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative z-10 p-4 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold !leading-tight tracking-tight mb-6 text-shadow">
-          Unleash Scalable Growth with Apex Cloud
+          Unleash Scalable Growth with Leywok
         </h1>
         <p className="text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto mb-10">
           Robust, secure, and efficient cloud solutions designed for the modern enterprise.

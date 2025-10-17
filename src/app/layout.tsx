@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Leywok Solutions',
+  title: 'Leywok',
   description: 'Unleash Scalable Growth with Robust, Secure, and Efficient Cloud Solutions.',
 };
 
