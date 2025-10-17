@@ -3,8 +3,8 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Leywok',
-  description: 'Unleash Scalable Growth with Robust, Secure, and Efficient Cloud Solutions.',
+  title: 'Leywok - Book Services On-Demand',
+  description: 'Find and book services from trusted local providers.',
 };
 
 export default function RootLayout({

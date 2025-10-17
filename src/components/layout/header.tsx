@@ -30,9 +30,12 @@ export function Header() {
         <Link href="/" aria-label="Leywok Home">
           <Logo />
         </Link>
-        <nav>
+        <nav className="flex items-center gap-4">
+          <Button variant="ghost" asChild>
+            <Link href="/provider-signup">Become a Provider</Link>
+          </Button>
           <Button asChild>
-            <Link href="#consultation">Request a Consultation</Link>
+            <Link href="#booking">Book a Service</Link>
           </Button>
         </nav>
       </div>

@@ -21,13 +21,13 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/50" />
       <div className="relative z-10 p-4 max-w-4xl mx-auto">
         <h1 className="text-4xl md:text-6xl font-extrabold !leading-tight tracking-tight mb-6 text-shadow">
-          Unleash Scalable Growth with Leywok
+          Book Local Services, On-Demand
         </h1>
         <p className="text-lg md:text-xl text-neutral-200 max-w-2xl mx-auto mb-10">
-          Robust, secure, and efficient cloud solutions designed for the modern enterprise.
+          Find trusted professionals for any service you need, right in your neighborhood.
         </p>
         <Button size="lg" asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
-          <Link href="#consultation">Request a Consultation</Link>
+          <Link href="#booking">Book a Service</Link>
         </Button>
       </div>
     </section>

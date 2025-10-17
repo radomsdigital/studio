@@ -1,9 +1,9 @@
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Hero } from '@/components/landing/hero';
-import { Products } from '@/components/landing/products';
+import { Services } from '@/components/landing/services';
 import { Testimonials } from '@/components/landing/testimonials';
-import { ConsultationForm } from '@/components/landing/consultation-form';
+import { ServiceRequestForm } from '@/components/landing/service-request-form';
 import { AnimatedSection } from '@/components/shared/animated-section';
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
         <Hero />
         
         <AnimatedSection>
-          <Products />
+          <Services />
         </AnimatedSection>
         
         <AnimatedSection>
@@ -22,17 +22,17 @@ export default function Home() {
         </AnimatedSection>
 
         <AnimatedSection>
-          <section id="consultation" className="py-20 md:py-32 bg-secondary/50">
+          <section id="booking" className="py-20 md:py-32 bg-secondary/50">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                  Request a Consultation
+                  Book a Service
                 </h2>
                 <p className="text-lg text-muted-foreground">
-                  Fill out the form below to get a custom cloud configuration tailored to your needs, powered by our GenAI assistant.
+                  Fill out the form below to book a service with one of our trusted providers.
                 </p>
               </div>
-              <ConsultationForm />
+              <ServiceRequestForm />
             </div>
           </section>
         </AnimatedSection>

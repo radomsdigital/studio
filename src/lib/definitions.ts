@@ -1,11 +1,10 @@
 import type { LucideIcon } from 'lucide-react';
 
-export interface Product {
+export interface Service {
   icon: LucideIcon;
   name: string;
   description: string;
-  benefits: string[];
-  price: string;
+  features: string[];
 }
 
 export interface Testimonial {

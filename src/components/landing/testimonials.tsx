@@ -7,30 +7,30 @@ const testimonials: Testimonial[] = [
   {
     logoId: 'logo-quantum',
     companyName: 'QuantumLeap Inc.',
-    quote: 'Leywok has been a game-changer for our infrastructure. Their scalability and reliability are unmatched, allowing us to focus on innovation.',
+    quote: 'Leywok made it incredibly easy to find a reliable plumber on short notice. The booking process was simple and the service was top-notch!',
     authorName: 'Jane Doe',
-    authorTitle: 'CTO, QuantumLeap Inc.',
+    authorTitle: 'Homeowner',
   },
   {
     logoId: 'logo-stellar',
     companyName: 'Stellar Solutions',
-    quote: 'The migration to Leywok was seamless. Their support team is top-notch, and we’ve seen a 30% reduction in our operational costs.',
+    quote: 'As a service provider, Leywok has connected me with so many new clients. The platform is user-friendly and has been great for my business.',
     authorName: 'John Smith',
-    authorTitle: 'Head of Engineering, Stellar Solutions',
+    authorTitle: 'Electrician, Stellar Electric',
   },
   {
     logoId: 'logo-nexus',
     companyName: 'Nexus Corp',
-    quote: 'Leywok AI Services enabled us to deploy our machine learning models at scale with incredible speed. It’s a powerful platform for any data-driven company.',
+    quote: 'I needed a last-minute caterer for an event, and Leywok came to the rescue. The quality of service exceeded my expectations.',
     authorName: 'Emily White',
-    authorTitle: 'Lead Data Scientist, Nexus Corp',
+    authorTitle: 'Event Planner, Nexus Events',
   },
     {
     logoId: 'logo-zenith',
     companyName: 'Zenith Dynamics',
-    quote: 'Security and compliance are critical for us. Leywok provides the robust security features we need to protect our enterprise data confidently.',
+    quote: 'The variety of services available is amazing. From cleaning to landscaping, I can find everything I need in one place. Highly recommend!',
     authorName: 'Michael Brown',
-    authorTitle: 'CISO, Zenith Dynamics',
+    authorTitle: 'Property Manager',
   },
 ];
 
@@ -40,10 +40,10 @@ export function Testimonials() {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground">
-            Trusted by Leading Enterprises
+            What Our Users Are Saying
           </h2>
           <p className="text-lg text-muted-foreground mt-4">
-            See how businesses like yours are transforming with Leywok.
+            Hear from satisfied customers and service providers.
           </p>
         </div>
 
