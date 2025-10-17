@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Apex Cloud Solutions',
+  title: 'Leywok Solutions',
   description: 'Unleash Scalable Growth with Robust, Secure, and Efficient Cloud Solutions.',
 };
 

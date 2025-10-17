@@ -27,7 +27,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" aria-label="Apex Cloud Solutions Home">
+        <Link href="/" aria-label="Leywok Solutions Home">
           <Logo />
         </Link>
         <nav>
