@@ -22,6 +22,13 @@ const providerSignupSchema = z.object({
   }),
 });
 
+const waitingListSchema = z.object({
+  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
+  email: z.string().email({ message: 'Please enter a valid email address.' }),
+  city: z.string().min(2, { message: 'Please enter your city.' }),
+  interest: z.string().min(3, { message: 'Please tell us about your interest.' }),
+});
+
 
 export type FormState = {
   message: string;
@@ -105,5 +112,33 @@ export async function handleProviderSignup(
   return {
     isSuccess: true,
     message: "Thank you for signing up! We've received your application and will be in touch shortly after we review your information.",
+  };
+}
+
+export async function handleWaitingListSignup(
+  prevState: FormState,
+  formData: FormData
+): Promise<FormState> {
+  const validatedFields = waitingListSchema.safeParse({
+    name: formData.get('name'),
+    email: formData.get('email'),
+    city: formData.get('city'),
+    interest: formData.get('interest'),
+  });
+
+  if (!validatedFields.success) {
+    return {
+      message: 'Please correct the errors below.',
+      errors: validatedFields.error.issues,
+    };
+  }
+
+  // Here you would typically save the waiting list data to your database.
+  // For now, we'll just simulate a successful submission.
+  console.log('Waiting List Signup Data:', validatedFields.data);
+
+  return {
+    isSuccess: true,
+    message: `Welcome to the Leywok waiting list, ${validatedFields.data.name}! You're now #2,501 on our list. We'll notify you as soon as we launch in your city.`,
   };
 }

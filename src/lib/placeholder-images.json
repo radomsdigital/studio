@@ -3,7 +3,7 @@
     {
       "id": "hero-service-provider",
       "description": "A confident female contractor with a hard hat and tools, representing various skilled trades like plumbing and electrical work.",
-      "imageUrl": "https://images.unsplash.com/photo-1574393436330-230a1098679b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb250cmFjdG9yfGVufDB8fHx8MTcxODg5NTg5N3ww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageUrl": "/contractor.jpg",
       "imageHint": "contractor worker"
     },
     {

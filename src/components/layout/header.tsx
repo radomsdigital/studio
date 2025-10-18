@@ -27,10 +27,17 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" aria-label="LEYWOK Home">
+        <Link 
+          href="/" 
+          aria-label="Leywok Home"
+          className="transition-opacity hover:opacity-80"
+        >
           <Logo />
         </Link>
         <nav className="flex items-center gap-4">
+          <Button variant="ghost" asChild>
+            <Link href="/waiting-list">Join Waiting List</Link>
+          </Button>
           <Button variant="ghost" asChild>
             <Link href="/provider-signup">Become a Provider</Link>
           </Button>

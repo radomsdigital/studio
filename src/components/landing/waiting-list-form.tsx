@@ -6,25 +6,24 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-import { handleServiceRequest, type FormState } from '@/app/actions';
+import { handleWaitingListSignup, type FormState } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { useEffect } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Alert, AlertDescription, AlertTitle } from '../ui/alert';
-import { CheckCircle, Info, Loader2, ServerCrash } from 'lucide-react';
+import { CheckCircle, Loader2, ServerCrash, Mail } from 'lucide-react';
 
-const serviceRequestSchema = z.object({
+const waitingListSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
   email: z.string().email({ message: 'Please enter a valid email address.' }),
-  taskTitle: z.string().min(3, { message: 'Please specify the title of your task.' }),
-  taskDetails: z.string().min(10, { message: 'Details must be at least 10 characters.' }),
+  city: z.string().min(2, { message: 'Please enter your city.' }),
+  interest: z.string().min(3, { message: 'Please tell us about your interest.' }),
 });
 
-type FormData = z.infer<typeof serviceRequestSchema>;
+type FormData = z.infer<typeof waitingListSchema>;
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -33,25 +32,28 @@ function SubmitButton() {
       {pending ? (
         <>
           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-          Posting Task...
+          Joining...
         </>
       ) : (
-        'Post Your Task'
+        <>
+          <Mail className="mr-2 h-4 w-4" />
+          Join Waiting List
+        </>
       )}
     </Button>
   );
 }
 
-export function ServiceRequestForm() {
+export function WaitingListForm() {
   const { toast } = useToast();
   const initialState: FormState = { message: '' };
-  const [state, formAction] = useActionState(handleServiceRequest, initialState);
+  const [state, formAction] = useActionState(handleWaitingListSignup, initialState);
 
   const {
     register,
     formState: { errors },
   } = useForm<FormData>({
-    resolver: zodResolver(serviceRequestSchema),
+    resolver: zodResolver(waitingListSchema),
     mode: 'onBlur',
   });
 
@@ -69,11 +71,14 @@ export function ServiceRequestForm() {
 
   if (state.isSuccess) {
     return (
-      <Alert variant={state.isHumanRoute ? "default" : "default"} className="max-w-4xl mx-auto bg-card">
-         {state.isHumanRoute ? <Info className="h-4 w-4" /> : <CheckCircle className="h-4 w-4 text-accent" /> }
-        <AlertTitle className='font-bold text-lg'>{state.isHumanRoute ? "Your Task is Complex!" : "Task Posted!"}</AlertTitle>
+      <Alert className="max-w-4xl mx-auto bg-card">
+        <CheckCircle className="h-4 w-4 text-brand-purple" />
+        <AlertTitle className='font-bold text-lg'>Welcome to the Waiting List!</AlertTitle>
         <AlertDescription>
           <p className="mb-4">{state.message}</p>
+          <p className="text-sm text-muted-foreground">
+            We'll send you updates about our launch progress and exclusive early access opportunities.
+          </p>
         </AlertDescription>
       </Alert>
     );
@@ -90,7 +95,7 @@ export function ServiceRequestForm() {
   }
 
   return (
-    <Card className="max-w-4xl mx-auto shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-colors">
+    <Card className="max-w-4xl mx-auto shadow-2xl border-2 border-border/50 hover:border-brand-purple/20 transition-colors">
       <CardContent className="p-6 md:p-10">
         <form action={formAction} className="space-y-8">
           <div className="grid md:grid-cols-2 gap-6">
@@ -117,34 +122,33 @@ export function ServiceRequestForm() {
               />
               {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
             </div>
-            <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="taskTitle" className="text-base font-semibold">Task Title *</Label>
+            <div className="space-y-2">
+              <Label htmlFor="city" className="text-base font-semibold">City *</Label>
               <Input 
-                id="taskTitle" 
-                {...register('taskTitle')} 
-                aria-invalid={!!errors.taskTitle} 
-                placeholder="e.g., Need a plumber to fix leaking faucet"
+                id="city" 
+                {...register('city')} 
+                aria-invalid={!!errors.city}
                 className="h-12 text-base"
+                placeholder="New York"
               />
-              {errors.taskTitle && <p className="text-sm text-destructive">{errors.taskTitle.message}</p>}
+              {errors.city && <p className="text-sm text-destructive">{errors.city.message}</p>}
             </div>
-            <div className="space-y-2 md:col-span-2">
-              <Label htmlFor="taskDetails" className="text-base font-semibold">Task Details *</Label>
-              <Textarea
-                id="taskDetails"
-                {...register('taskDetails')}
-                aria-invalid={!!errors.taskDetails}
-                placeholder="Describe your task in detail. Include budget, timeline, and any specific requirements."
-                className="min-h-[150px] text-base"
-                rows={6}
+            <div className="space-y-2">
+              <Label htmlFor="interest" className="text-base font-semibold">What interests you most? *</Label>
+              <Input 
+                id="interest" 
+                {...register('interest')} 
+                aria-invalid={!!errors.interest}
+                className="h-12 text-base"
+                placeholder="e.g., Finding reliable home services"
               />
-               {errors.taskDetails && <p className="text-sm text-destructive">{errors.taskDetails.message}</p>}
+              {errors.interest && <p className="text-sm text-destructive">{errors.interest.message}</p>}
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row justify-between items-center pt-6 border-t border-border/50 gap-4">
             <p className="text-sm text-muted-foreground">
-              By posting, you agree to our Terms of Service
+              By joining, you agree to receive updates about Leywok's launch
             </p>
             <SubmitButton />
           </div>

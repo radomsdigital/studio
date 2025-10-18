@@ -1,13 +1,50 @@
-# **App Name**: Apex Cloud Solutions
+# **App Name**: Leywok
 
 ## Core Features:
 
-- Compelling Hero Section: A landing page section featuring a dynamic headline that immediately conveys the value proposition, such as 'Unleash Scalable Growth with Apex Cloud'. It includes a concise subheadline addressing the enterprise audience's needs for robust, secure, and efficient cloud solutions.
-- Top Products Showcase: Dedicated area highlighting key cloud products (e.g., Compute, Storage, Networking, AI Services). Each product includes a brief description, key benefits tailored for enterprise use cases, and transparent pricing information to build trust and facilitate decision-making.
-- Customer Success Stories: Incorporation of customer testimonials with recognizable company logos to add credibility and social proof. These testimonials illustrate specific problems the cloud provider solved for enterprise clients and the positive outcomes achieved.
-- Clear Call-to-Action (CTA): Prominent placement of a CTA button labeled 'Request a Consultation' throughout the landing page. The button is visually distinct and strategically positioned to encourage user engagement at multiple points of the page.
-- Generative AI Assistant: A GenAI assistant tool for quickly customizing proposed cloud configurations, including cost estimates and resource allocation scenarios.
-- Contact form: A form to allow a user to submit contact information that is emailed to the cloud provider. If the LLM determines the request would best be handled by a human it does not generate the automated configuration for the customer.  
+- **Compelling Hero Section**: A landing page section featuring a dynamic headline that immediately conveys the value proposition: "Post a Task, Get It Done." It includes a concise subheadline addressing users' needs for fast, reliable, and effortless service booking from skilled professionals.
+
+- **Service Categories Showcase**: Dedicated area highlighting key service categories:
+  - Home Services (cleaning, repairs, maintenance)
+  - Skilled Trades (plumbers, electricians, carpenters)
+  - Creative & Design (graphic design, web development, content creation)
+  - Professional Services (consulting, marketing, business support)
+  
+  Each category includes a brief description, key benefits, and starting price information to build trust and facilitate decision-making.
+
+- **How It Works Section**: A clear 4-step process explaining the platform:
+  1. Post Your Task - Describe what you need
+  2. Receive Bids - Compare qualified professionals
+  3. Award the Job - Choose the best provider
+  4. Get It Done - Pay securely after completion
+
+- **Customer Success Stories**: Incorporation of testimonials from satisfied customers and service providers with company/business identifiers. These testimonials illustrate specific problems Leywok solved and positive outcomes achieved.
+
+- **Clear Call-to-Action (CTA)**: Prominent placement of two primary CTAs throughout the landing page:
+  - "Post a Task" - For customers needing services
+  - "Become a Provider" - For professionals joining the platform
+  
+  Buttons are visually distinct and strategically positioned to encourage user engagement.
+
+- **AI-Powered Request Routing**: A GenAI assistant that analyzes task requests for complexity. If the LLM determines a request is too complex for automated processing, it routes the task to human specialists who can clarify requirements before posting.
+
+- **Task Submission Form**: A comprehensive form allowing users to submit:
+  - Name and email
+  - Task title
+  - Detailed task description
+  - Budget and timeline requirements
+
+- **Provider Signup**: A dedicated signup flow for service providers including:
+  - Professional information
+  - Service category selection
+  - Experience verification
+  - Profile creation
+
+- **Trust Indicators**: Display of key metrics to build confidence:
+  - Verified professionals
+  - Secure payments
+  - Satisfaction guaranteed
+  - Platform statistics (tasks completed, active providers)  
 
 ## Style Guidelines:
 

@@ -94,24 +94,37 @@ export function ProviderSignupForm() {
  }
 
   return (
-    <Card className="max-w-4xl mx-auto">
-      <CardContent className="p-6 md:p-8">
+    <Card className="max-w-4xl mx-auto shadow-2xl border-2 border-border/50 hover:border-primary/20 transition-colors">
+      <CardContent className="p-6 md:p-10">
         <Form {...form}>
           <form action={formAction} className="space-y-8">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
-                <Input id="name" {...form.register('name')} aria-invalid={!!errors.name} />
+                <Label htmlFor="name" className="text-base font-semibold">Full Name *</Label>
+                <Input 
+                  id="name" 
+                  {...form.register('name')} 
+                  aria-invalid={!!errors.name}
+                  className="h-12 text-base"
+                  placeholder="John Smith"
+                />
                 {errors.name && <p className="text-sm text-destructive">{errors.name.message}</p>}
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
-                <Input id="email" type="email" {...form.register('email')} aria-invalid={!!errors.email} />
+                <Label htmlFor="email" className="text-base font-semibold">Email Address *</Label>
+                <Input 
+                  id="email" 
+                  type="email" 
+                  {...form.register('email')} 
+                  aria-invalid={!!errors.email}
+                  className="h-12 text-base"
+                  placeholder="john@example.com"
+                />
                 {errors.email && <p className="text-sm text-destructive">{errors.email.message}</p>}
               </div>
 
               <div className="space-y-2">
-                  <Label>Primary Service</Label>
+                  <Label className="text-base font-semibold">Primary Service *</Label>
                   <FormField
                     control={form.control}
                     name="service"
@@ -119,7 +132,7 @@ export function ProviderSignupForm() {
                       <FormItem>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
-                            <SelectTrigger>
+                            <SelectTrigger className="h-12 text-base">
                               <SelectValue placeholder="Select a service category" />
                             </SelectTrigger>
                           </FormControl>
@@ -136,13 +149,24 @@ export function ProviderSignupForm() {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="experience">Years of Experience</Label>
-                <Input id="experience" type="number" {...form.register('experience')} aria-invalid={!!errors.experience} />
+                <Label htmlFor="experience" className="text-base font-semibold">Years of Experience *</Label>
+                <Input 
+                  id="experience" 
+                  type="number" 
+                  {...form.register('experience')} 
+                  aria-invalid={!!errors.experience}
+                  className="h-12 text-base"
+                  placeholder="5"
+                  min="0"
+                />
                 {errors.experience && <p className="text-sm text-destructive">{errors.experience.message}</p>}
               </div>
             </div>
             
-            <div className="flex justify-end pt-6 border-t">
+            <div className="flex flex-col sm:flex-row justify-between items-center pt-6 border-t border-border/50 gap-4">
+              <p className="text-sm text-muted-foreground">
+                By submitting, you agree to our Terms of Service
+              </p>
               <SubmitButton />
             </div>
           </form>
