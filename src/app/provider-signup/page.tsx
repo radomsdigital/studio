@@ -13,7 +13,7 @@ export default function ProviderSignupPage() {
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-                  Become a Provider on LIEYWOK
+                  Become a Provider on LEYWOK
                 </h1>
                 <p className="text-lg text-muted-foreground">
                   Join our network of trusted professionals and grow your business.

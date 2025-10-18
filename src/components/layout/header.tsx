@@ -27,7 +27,7 @@ export function Header() {
       )}
     >
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
-        <Link href="/" aria-label="LIEYWOK Home">
+        <Link href="/" aria-label="LEYWOK Home">
           <Logo />
         </Link>
         <nav className="flex items-center gap-4">

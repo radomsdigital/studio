@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'LIEYWOK - Book Services On-Demand',
+  title: 'LEYWOK - Book Services On-Demand',
   description: 'Find and book services from trusted local providers.',
 };
 
