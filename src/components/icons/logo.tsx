@@ -18,11 +18,11 @@ export function Logo({ className }: { className?: string }) {
           >
             <stop
               offset="0%"
-              style={{ stopColor: 'rgb(53, 94, 209)', stopOpacity: 1 }}
+              style={{ stopColor: 'hsl(var(--primary))', stopOpacity: 1 }}
             />
             <stop
               offset="100%"
-              style={{ stopColor: 'rgb(96, 53, 209)', stopOpacity: 1 }}
+              style={{ stopColor: 'hsl(var(--primary) / 0.8)', stopOpacity: 1 }}
             />
           </linearGradient>
           <linearGradient
@@ -34,39 +34,38 @@ export function Logo({ className }: { className?: string }) {
           >
             <stop
               offset="0%"
-              style={{ stopColor: 'rgb(96, 53, 209)', stopOpacity: 1 }}
+              style={{ stopColor: 'hsl(var(--primary) / 0.8)', stopOpacity: 1 }}
             />
             <stop
               offset="100%"
-              style={{ stopColor: 'rgb(187, 53, 209)', stopOpacity: 1 }}
+              style={{ stopColor: 'hsl(var(--accent))', stopOpacity: 1 }}
             />
           </linearGradient>
         </defs>
+
+        {/* Stylized L */}
+        <path d="M30 30 L30 110 L90 110 L90 100 L40 100 L40 30 Z" fill="url(#grad1)" />
+        
         {/* Briefcase */}
-        <path
-          d="M40 55 C35 55 35 50 40 50 L60 50 C65 50 65 55 60 55"
-          fill="url(#grad1)"
-        />
-        <rect x="35" y="55" width="30" height="20" rx="3" fill="url(#grad1)" />
-        <rect x="47" y="57" width="6" height="4" fill="white" />
-        {/* Handshake and Arrow */}
-        <path
-          d="M50 80 C 50 100, 70 110, 85 110 C 100 110, 110 100, 110 80 C 110 95, 100 105, 85 105 C 70 105, 50 95, 50 80"
-          fill="url(#grad2)"
-        />
-        <path
-          d="M60 85 L70 75 M65 90 L75 80 M70 95 L80 85"
-          stroke="white"
-          strokeWidth="2"
-        />
-        <path d="M85 75 L85 45 L80 50 M85 45 L90 50" stroke="#BF40BF" strokeWidth="4" fill="none" />
-        <circle cx="85" cy="75" r="3" fill="#DFFF00" />
-        <circle cx="100" cy="70" r="3" fill="#DFFF00" />
-        <path d="M85 75 L100 70" stroke="#DFFF00" strokeWidth="1.5" />
-        <circle cx="110" cy="80" r="3" fill="#DFFF00" />
-        <path d="M100 70 L110 80" stroke="#DFFF00" strokeWidth="1.5" />
+        <rect x="25" y="45" width="20" height="15" rx="2" fill="white" />
+        <rect x="22" y="50" width="26" height="12" rx="2" fill="url(#grad1)" />
+        <rect x="33" y="42" width="4" height="6" rx="1" fill="white" />
+
+
+        {/* Handshake overlapping with L */}
+        <path d="M45 110 C 60 110, 70 100, 80 90 L 95 90 C 110 90, 115 100, 115 110" fill="url(#grad2)" />
+        <path d="M55 100 L 75 100 M60 105 L80 105" stroke="white" strokeWidth="2" />
+        
+        {/* Arrow and nodes */}
+        <path d="M90 85 L110 65 L105 70 M110 65 L115 70" stroke="hsl(var(--accent))" strokeWidth="4" fill="none" />
+        <circle cx="90" cy="85" r="3" fill="yellow" />
+        <circle cx="100" cy="75" r="3" fill="yellow" />
+        <circle cx="115" cy="80" r="3" fill="yellow" />
+        <path d="M90 85 L100 75 L110 65" stroke="hsl(var(--accent))" strokeOpacity="0.5" strokeWidth="1.5" />
+         <path d="M100 75 L115 80" stroke="hsl(var(--accent))" strokeOpacity="0.5" strokeWidth="1.5" />
+
       </svg>
-      <span className="text-xl font-bold text-foreground">Leywok</span>
+      <span className="text-2xl font-bold text-foreground">Leywok</span>
     </div>
   );
 }
