@@ -65,7 +65,7 @@ export function Logo({ className }: { className?: string }) {
          <path d="M100 75 L115 80" stroke="hsl(var(--accent))" strokeOpacity="0.5" strokeWidth="1.5" />
 
       </svg>
-      <span className="text-2xl font-bold text-foreground">Leywok</span>
+      <span className="text-2xl font-bold text-foreground">LIEYWOK</span>
     </div>
   );
 }
