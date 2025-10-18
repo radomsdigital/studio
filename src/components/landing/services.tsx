@@ -76,7 +76,7 @@ export function Services() {
                     variant="secondary" 
                     className="self-center bg-trust-emerald/10 text-trust-emerald hover:bg-trust-emerald/20 font-semibold"
                   >
-                    Starting from $25
+                    Starting from ₹99
                   </Badge>
                 </CardContent>
               </Card>
