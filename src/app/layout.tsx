@@ -104,11 +104,38 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" href="/leywok_logo.png" />
         <link rel="apple-touch-icon" href="/leywok_logo.png" />
+        
+        {/* Theme & Mobile */}
         <meta name="theme-color" content="#2563eb" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Leywok" />
+        
+        {/* Additional Open Graph Tags for better social sharing */}
+        <meta property="og:title" content="Leywok - Post a Task, Get It Done | Professional Service Marketplace" />
+        <meta property="og:description" content="Connect with skilled professionals for any task. Post your job and receive competitive bids from verified service providers in your area." />
+        <meta property="og:image" content="https://leywok.com/opengraph-image" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Leywok - Professional Service Marketplace" />
+        <meta property="og:url" content="https://leywok.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Leywok" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@leywok" />
+        <meta name="twitter:creator" content="@leywok" />
+        <meta name="twitter:title" content="Leywok - Post a Task, Get It Done" />
+        <meta name="twitter:description" content="Connect with skilled professionals for any task. Post your job and receive competitive bids from verified service providers." />
+        <meta name="twitter:image" content="https://leywok.com/twitter-image" />
+        <meta name="twitter:image:alt" content="Leywok - Professional Service Marketplace" />
+        
+        {/* Additional Meta for better indexing */}
+        <meta name="description" content="Connect with skilled professionals for any task. Post your job and receive competitive bids from verified service providers in your area. Home services, repairs, cleaning, and more." />
+        <link rel="canonical" href="https://leywok.com" />
       </head>
       <body className="font-body antialiased">
         {children}
